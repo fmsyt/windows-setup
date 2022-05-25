@@ -37,18 +37,9 @@ $SCOOP_ROOT = if ($env:SCOOP) {$env:SCOOP} else {"$home\scoop"}
 # scoop install vscode
 # reg import $SCOOP_ROOT\apps\vscode\current\vscode-install-context.reg  # add context menu
 
-# scoop install winscp
-# $winscp_version = scoop info winscp | Select-String -Pattern "Version" | %{ $_.Line.Split(" ")[1] }
-# Invoke-WebRequest -Uri https://winscp.net/translations/dll/$winscp_version/jp.zip -OutFile $SCOOP_ROOT\apps\winscp\$winscp_version\jp.zip
-# Expand-Archive -Force -Path $SCOOP_ROOT\apps\winscp\$winscp_version\jp.zip -DestinationPath $SCOOP_ROOT\apps\winscp\$winscp_version\
-# Remove-Item $SCOOP_ROOT\apps\winscp\$winscp_version\jp.zip
-
-# scoop install powertoys
-
 scoop install cpu-z `
   crystaldiskinfo `
   hwmonitor `
   mp3tag `
   notion `
   vncviewer
-
