@@ -9,5 +9,3 @@ if NOT "%LEVEL%"=="High" (
 wsl -t Ubuntu
 
 call %~dp0startup.bat
-
-exit
