@@ -6,6 +6,8 @@ if NOT "%LEVEL%"=="High" (
     exit
 )
 
-wsl -t Ubuntu
+for /f %%i in ('wsl exec hostname -I') do set ip=%%i
 
-call %~dp0startup.bat
+for /f "skip=1 tokens=1,2* delims=," %%i in (%~dp0port.csv) do (
+    netsh interface portproxy delete v4tov4 listenport=%%i
+)

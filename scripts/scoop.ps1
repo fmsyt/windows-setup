@@ -31,15 +31,11 @@ scoop bucket add versions
 # Scoopのインストールディレクトリ取得
 $SCOOP_ROOT = if ($env:SCOOP) {$env:SCOOP} else {"$home\scoop"}
 
-##################################################
-# install vscode
-##################################################
-# scoop install vscode
-# reg import $SCOOP_ROOT\apps\vscode\current\vscode-install-context.reg  # add context menu
-
 scoop install cpu-z `
   crystaldiskinfo `
   hwmonitor `
   mp3tag `
   notion `
   vncviewer
+
+scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
