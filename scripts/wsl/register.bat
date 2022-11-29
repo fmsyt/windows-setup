@@ -7,6 +7,6 @@ if NOT "%LEVEL%"=="High" (
 )
 
 
-schtasks /create /tn %username%\wsl-startup /tr %~dp0startup.bat /sc onstart /rl highest /ru system /delay 0000:30
+schtasks /create /tn %username%\wsl-startup /tr %~dp0startup.bat /sc onstart /rl highest /delay 0000:30
 
 pause
