@@ -6,7 +6,4 @@ if NOT "%LEVEL%"=="High" (
     exit
 )
 
-
-schtasks /create /tn %username%\wsl-startup /tr %~dp0startup.bat /sc onstart /rl highest /delay 0000:30
-
-pause
+schtasks /create /tn %username%\wsl-startup /tr "%~dp0startup.vbs" /sc onstart /rl highest /delay 0000:05
