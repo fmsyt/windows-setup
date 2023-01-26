@@ -25,18 +25,26 @@ scoop install git
 scoop install sudo
 
 # add bucket
+scoop bucket add main
 scoop bucket add extras
 scoop bucket add versions
+scoop bucket add nerd-fonts
+
+scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+
 
 # Scoopのインストールディレクトリ取得
 $SCOOP_ROOT = if ($env:SCOOP) {$env:SCOOP} else {"$home\scoop"}
 
-scoop install cpu-z `
+scoop install `
+  cpu-z `
   crystaldiskinfo `
   hwmonitor `
   mp3tag `
   notion `
-  vncviewer
+  vim `
+  vncviewer `
+  oh-my-posh
 
-scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
-scoop update oh-my-posh
+sudo scoop install -g Cascadia-Code `
+  CascadiaCode-NF
